@@ -11,10 +11,15 @@ public class Hero {
     private Vector2 position;
     private float speed;
 
-    public Hero() {
+    public Hero(GeekRpgGame game) {
         this.texture = new Texture("hero.png");
         this.position = new Vector2(100, 100);
         this.speed = 100.0f;
+    }
+
+
+    public void setPosition(Vector2 position) {
+        this.position = position;
     }
 
     public void render(SpriteBatch batch) {

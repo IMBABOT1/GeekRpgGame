@@ -19,10 +19,18 @@ public class GeekRpgGame extends ApplicationAdapter {
     // - Разобраться с кодом
     // - Персонаж должен двигаться к указателю
 
+
+
+    public Vector2 getPointerPosition() {
+        return pointerPosition;
+    }
+
+
+
     @Override
     public void create() {
         batch = new SpriteBatch();
-        hero = new Hero();
+        hero = new Hero(this);
         textureGrass = new Texture("grass.png");
         texturePointer = new Texture("pointer.png");
         pointerPosition = new Vector2(0, 0);
@@ -50,6 +58,8 @@ public class GeekRpgGame extends ApplicationAdapter {
         hero.update(dt);
         if (Gdx.input.justTouched()) {
             pointerPosition.set(Gdx.input.getX(), 720.0f - Gdx.input.getY());
+            hero.setPosition(pointerPosition);
+
         }
     }
 
