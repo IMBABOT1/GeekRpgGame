@@ -11,6 +11,12 @@ public class Projectile {
     private Vector2 velocity;
     private boolean active;
 
+
+    public Vector2 getPosition() {
+        return position;
+    }
+
+
     public Projectile(TextureAtlas atlas) {
         this.textureRegion = atlas.findRegion("arrow");
         this.position = new Vector2(0, 0);

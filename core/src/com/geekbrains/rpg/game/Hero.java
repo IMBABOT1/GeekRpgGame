@@ -23,6 +23,12 @@ public class Hero {
     private int hpMax;
     private StringBuilder strBuilder;
 
+
+    public Projectile getProjectile() {
+        return projectile;
+    }
+
+
     public Hero(TextureAtlas atlas) {
         this.texture = atlas.findRegion("knight");
         this.texturePointer = atlas.findRegion("pointer");
