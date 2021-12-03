@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 
 public class Monster {
@@ -37,6 +38,11 @@ public class Monster {
 
     public void takeDamage(int amount) {
         hp -= amount;
+        if (hp <= 0){
+            gameScreen.getHero().setCoins(MathUtils.random(3, 10));
+            hp = hpMax;
+            position.set(MathUtils.random(0, 1280), MathUtils.random(0, 720));
+        }
     }
 
     public void render(SpriteBatch batch) {

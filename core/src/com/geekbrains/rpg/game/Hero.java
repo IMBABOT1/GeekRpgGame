@@ -23,6 +23,8 @@ public class Hero {
     private int hpMax;
     private StringBuilder strBuilder;
 
+    private int coins;
+
     public Vector2 getPosition() {
         return position;
     }
@@ -39,6 +41,11 @@ public class Hero {
         this.hpMax = 10;
         this.hp = 10;
         this.strBuilder = new StringBuilder();
+        this.coins = 0;
+    }
+
+    public void setCoins(int amount){
+        coins += amount;
     }
 
     public void render(SpriteBatch batch) {
@@ -51,6 +58,7 @@ public class Hero {
         strBuilder.setLength(0);
         strBuilder.append("Class: ").append("Knight").append("\n");
         strBuilder.append("HP: ").append(hp).append(" / ").append(hpMax).append("\n");
+        strBuilder.append("Coins: ").append(coins);
         font.draw(batch, strBuilder, 10, 710);
     }
 
