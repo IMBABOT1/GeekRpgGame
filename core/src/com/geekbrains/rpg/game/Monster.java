@@ -16,6 +16,7 @@ public class Monster {
     private Vector2 dst;
     private Vector2 tmp;
     private float lifetime;
+    private float attackTime;
     private float speed;
     private int hp;
     private int hpMax;
@@ -56,5 +57,15 @@ public class Monster {
         lifetime += dt;
         tmp.set(gameScreen.getHero().getPosition()).sub(position).nor().scl(speed);
         position.mulAdd(tmp, dt);
+
+        damage(dt);
+    }
+
+    public void damage(float dt){
+        attackTime += dt;
+        if (attackTime >= 0.5f && position.dst(gameScreen.getHero().getPosition()) < 30){
+            gameScreen.getHero().takeDamage(1);
+            attackTime = 0;
+        }
     }
 }

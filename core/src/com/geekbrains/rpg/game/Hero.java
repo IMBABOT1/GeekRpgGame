@@ -62,6 +62,10 @@ public class Hero {
         font.draw(batch, strBuilder, 10, 710);
     }
 
+    public void takeDamage(int amount) {
+        hp -= amount;
+    }
+
     public void update(float dt) {
         lifetime += dt;
         if (Gdx.input.isButtonJustPressed(Input.Buttons.LEFT)) {
