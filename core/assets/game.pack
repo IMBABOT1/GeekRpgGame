@@ -31,13 +31,6 @@ arrow
   orig: 60, 60
   offset: 0, 0
   index: -1
-Apple
-  rotate: false
-  xy: 84, 68
-  size: 60, 58
-  orig: 60, 58
-  offset: 0, 0
-  index: -1
 hp
   rotate: false
   xy: 2, 84
